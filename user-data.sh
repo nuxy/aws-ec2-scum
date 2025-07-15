@@ -32,7 +32,7 @@ fi
 
 service docker start && chkconfig docker on
 
-# Create 8GB swapfile (support t3.medium)
+# Create 16GB swapfile (support t3.xlarge)
 dd if=/dev/zero of=/swapfile bs=128M count=64
 
 if [ -f /swapfile ]; then

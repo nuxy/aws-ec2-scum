@@ -17,7 +17,7 @@ WARNING: The policies above are provided to ensure a successful EC2 deployment. 
 
 ## Launching the EC2 instance
 
-    $ aws ec2 run-instances --image-id ami-05fa00d4c63e32376 --instance-type t3.small --region us-east-1a --block-device-mappings file://block-device-mapping.json --user-data file://user-data.sh --associate-public-ip-address
+    $ aws ec2 run-instances --image-id ami-05fa00d4c63e32376 --instance-type t3.xlarge --region us-east-1a --block-device-mappings file://block-device-mapping.json --user-data file://user-data.sh --associate-public-ip-address
 
 ## Logging into your server
 
