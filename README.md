@@ -29,9 +29,9 @@ As part of the installation process an [SSM Agent](https://docs.aws.amazon.com/s
 
 ## Game server defaults
 
-The container comes with a vanilla installation of [SCUM Dedicated Server](https://steamdb.info/app/3792580) which is configured to support _up to 3 players_ and broadcasts the server name "SCUM Server".  The following ports need to be opened using [EC2 Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group).
+The container comes with a vanilla installation of [SCUM Dedicated Server](https://steamdb.info/app/3792580) which is configured to support _up to 3 players_ and broadcasts the server name "SCUM Server".  The following ports need to be opened using a [EC2 Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) policy.
 
-### Ports
+### Ports to open
 
 | Port | Protocol | Description                                      |
 |------|----------|--------------------------------------------------|
