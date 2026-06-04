@@ -60,9 +60,13 @@ EOF
 systemctl enable spoof-network
 
 # Launch the game server.
-CONTAINER_ID=`docker run -d --network host --restart always marcsbrooks/docker-scum-server:latest`
+cat << EOF > /root/.docker-env
+USERNAME=anonymous
+APPID=3792580
+RUNCMD="SCUM/Binaries/Win64/SCUMServer.exe -log -nobattleye -port=7777 -MaxPlayers=$MAX_PLAYERS"
+EOF
 
-docker cp /tmp/.game-server $CONTAINER_ID:/usr/games && rm -f /tmp/.game-server
+CONTAINER_ID=`docker run -d --network host --mount type=bind,src=/root/docker-env,dst=/var/run/docker-env --restart always marcsbrooks/docker-steamcmd-wine:latest`
 
 # Create game server cron tasks.
 cat << EOF > /var/spool/cron/root
