@@ -66,7 +66,7 @@ APPID=3792580
 RUNCMD="SCUM/Binaries/Win64/SCUMServer.exe -log -nobattleye -port=7777 -MaxPlayers=$MAX_PLAYERS"
 EOF
 
-CONTAINER_ID=`docker run -d --network host --mount type=bind,src=/root/docker-env,dst=/var/run/docker-env --restart always marcsbrooks/docker-steamcmd-wine:latest`
+CONTAINER_ID=`docker run -d --network host --mount type=bind,src=/root/.docker-env,dst=/var/run/docker-env --restart always marcsbrooks/docker-steamcmd-wine:latest`
 
 # Create game server cron tasks.
 cat << EOF > /var/spool/cron/root
